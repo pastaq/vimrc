@@ -16,6 +16,8 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'klen/python-mode'
 Bundle 'davidhalter/jedi-vim'
+Bundle 'fatih/vim-go'
+Bundle 'moll/vim-node'
 "
 " The rest of your config follows here
 "
@@ -39,6 +41,9 @@ set autochdir
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+" Highlight searches
+set hlsearch
 
 " more subtle popup colors 
 if has ('gui_running')
