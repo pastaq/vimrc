@@ -18,10 +18,14 @@ Bundle 'klen/python-mode'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'fatih/vim-go'
 Bundle 'moll/vim-node'
+Bundle 'marijnh/tern_for_vim'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'majutsushi/tagbar'
 "
 " The rest of your config follows here
 "
 map <F2> :NERDTreeToggle<CR>
+map <F8> :TagbarToggle<CR>
 
 augroup vimrc_autocmds
     autocmd!
