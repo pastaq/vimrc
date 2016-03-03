@@ -21,6 +21,7 @@ Bundle 'moll/vim-node'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'majutsushi/tagbar'
+Bundle 'NLKNguyen/copy-cut-paste.vim'
 "
 " The rest of your config follows here
 "
