@@ -11,7 +11,10 @@ Bundle 'gmarik/vundle'
 " The bundles you install will be listed here
 "
 filetype plugin indent on
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+syntax on
+"Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'klen/python-mode'
@@ -22,6 +25,12 @@ Bundle 'marijnh/tern_for_vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'majutsushi/tagbar'
 Bundle 'NLKNguyen/copy-cut-paste.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'airblade/vim-rooter.git'
+Bundle 'Yggdroot/indentLine.git'
+Bundle 'mkitt/tabline.vim.git'
+Bundle 'neomake/neomake'
+Bundle 'keith/swift.vim'
 "
 " The rest of your config follows here
 "
@@ -39,6 +48,31 @@ augroup vimrc_autocmds
 
 call vundle#end()
 
+" Neomake
+autocmd! BufWritePost,BufEnter * Neomake
+"let g:neomake_open_list = 2
+let g:neomake_java_javac_maker = {
+        \ 'errorformat': 
+            \ '%E%f:%l: %trror: %m,' .
+            \ '%W%f:%l: %tarning: %m,' .
+            \ '%E%f:%l: %m,'. 
+            \ '%Z%p^,'.
+            \ '%-G%.%#',
+        \ }
+let g:neomake_java_enabled_makers = ['javac']
+
+" " Copy to clipboard
+set clipboard+=unnamedplus
+
+" Eclim completion
+let g:EclimCompletionMethod = 'omnifunc'
+
+" YouCompleteMe Python Path
+let g:ycm_server_python_interpreter = "/usr/bin/python"
+
+" NeoVim True Color
+"let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
 " automatically change window's cwd to file's dir
 set autochdir
 
@@ -47,8 +81,12 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" Set line numbers
+set number
+
 " Highlight searches
 set hlsearch
+highlight Search cterm=NONE ctermfg=white ctermbg=blue
 
 " more subtle popup colors 
 if has ('gui_running')
@@ -56,14 +94,24 @@ if has ('gui_running')
 endif
 
 " Powerline setup
-let g:Powerline_symbols = 'fancy'
-set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+"let g:Powerline_symbols = 'fancy'
+"set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+
+" Airline setup
+let g:airline_powerline_fonts = 1
 
 " Always show statusline
 set laststatus=2
 
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
+
+" 10 line terminal binding
+nnoremap <F3> :below 10sp term://$SHELL<cr>i
+
+" NeoVim Python
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
 
 " Python-mode
 " Activate rope
@@ -107,3 +155,14 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 " Don't autofold code
 let g:pymode_folding = 0
+
+" vertical line indentation
+let g:indentLine_color_term = 239
+let g:indentLine_color_gui = '#09AA08'
+let g:indentLine_char = '│'
+
+" Allow jumping into Java files with gf
+autocmd BufRead *.java set suffixesadd=.java
+
+" Enable syntax highlighting for swift
+autocmd BufNewFile,BufRead *.swift set syntax=swift
