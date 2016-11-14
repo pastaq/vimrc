@@ -31,6 +31,7 @@ Bundle 'Yggdroot/indentLine.git'
 Bundle 'mkitt/tabline.vim.git'
 Bundle 'neomake/neomake'
 Bundle 'keith/swift.vim'
+Bundle 'peterhoeg/vim-qml'
 "
 " The rest of your config follows here
 "
@@ -166,3 +167,11 @@ autocmd BufRead *.java set suffixesadd=.java
 
 " Enable syntax highlighting for swift
 autocmd BufNewFile,BufRead *.swift set syntax=swift
+
+" Enable syntax highlighting for flatbuffers
+autocmd BufNewFile,BufRead *.fbs setfiletype fbs
+
+" go-vim settings
+"let g:go_auto_type_info = 1
+set updatetime=100
+let g:go_auto_sameids = 1
