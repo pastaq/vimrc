@@ -1,5 +1,6 @@
 set nocompatible
 filetype off
+"let mapleader = ","
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -19,10 +20,9 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'klen/python-mode'
 Bundle 'davidhalter/jedi-vim'
-Bundle 'fatih/vim-go'
 Bundle 'moll/vim-node'
 Bundle 'marijnh/tern_for_vim'
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 Bundle 'majutsushi/tagbar'
 Bundle 'NLKNguyen/copy-cut-paste.vim'
 Bundle 'kien/ctrlp.vim'
@@ -32,7 +32,13 @@ Bundle 'mkitt/tabline.vim.git'
 Bundle 'neomake/neomake'
 Bundle 'keith/swift.vim'
 Bundle 'peterhoeg/vim-qml'
-Bundle 'kshenoy/vim-signature'
+Bundle 'fatih/vim-go'
+Bundle 'Shougo/neosnippet.vim'
+Bundle 'Shougo/neosnippet-snippets'
+Bundle 'fatih/molokai'
+Bundle 'garyburd/go-explorer'
+Bundle 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Bundle 'zchee/deoplete-go', {'build': 'make'}
 "
 " The rest of your config follows here
 "
@@ -69,8 +75,13 @@ set clipboard+=unnamedplus
 " Eclim completion
 let g:EclimCompletionMethod = 'omnifunc'
 
-" YouCompleteMe Python Path
-let g:ycm_server_python_interpreter = "/usr/bin/python"
+" YouCompleteMe Python Path TODO: Remove
+"let g:ycm_server_python_interpreter = "/usr/bin/python"
+
+" Deoplete autocompletion
+" Start deoplete for autocompletion
+let g:deoplete#enable_at_startup = 1
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " NeoVim True Color
 "let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -174,5 +185,8 @@ autocmd BufNewFile,BufRead *.fbs setfiletype fbs
 
 " go-vim settings
 "let g:go_auto_type_info = 1
-set updatetime=100
+set updatetime=70
 let g:go_auto_sameids = 1
+autocmd FileType go nmap <Leader>g <Plug>(go-def-tab)
+autocmd FileType go nmap <leader>t <Plug>(go-test)
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
