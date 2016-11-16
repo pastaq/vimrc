@@ -1,9 +1,8 @@
 # vimrc
 
-# Guide from:
-http://unlogic.co.uk/2013/02/08/vim-as-a-python-ide/
+# Setup
 
-# Powerline Install
+## Powerline Install
 `sudo pip install git+git://github.com/Lokaltog/powerline`
 
 `wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf`    
@@ -11,11 +10,18 @@ http://unlogic.co.uk/2013/02/08/vim-as-a-python-ide/
 `sudo fc-cache -vf`    
 `sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/`    
 
-# Tagbar install
+## Tagbar install
 `sudo apt-get install exuberant-ctags`
 
-# Install Bundles
+## Install Vundle
+`git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+
+## NeoVim Plugin Support
+`sudo pip install -U neovim`    
+`sudo pip3 install -U neovim`
+
+## Install Plugins
 `vim`
 
-:BundleList
-:BundleInstall
+`:BundleList`    
+`:BundleInstall`

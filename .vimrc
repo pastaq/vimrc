@@ -22,7 +22,6 @@ Bundle 'klen/python-mode'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'moll/vim-node'
 Bundle 'marijnh/tern_for_vim'
-"Bundle 'Valloric/YouCompleteMe'
 Bundle 'majutsushi/tagbar'
 Bundle 'NLKNguyen/copy-cut-paste.vim'
 Bundle 'kien/ctrlp.vim'
@@ -32,7 +31,7 @@ Bundle 'mkitt/tabline.vim.git'
 Bundle 'neomake/neomake'
 Bundle 'keith/swift.vim'
 Bundle 'peterhoeg/vim-qml'
-Bundle 'fatih/vim-go'
+Bundle 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Bundle 'Shougo/neosnippet.vim'
 Bundle 'Shougo/neosnippet-snippets'
 Bundle 'fatih/molokai'
@@ -74,9 +73,6 @@ set clipboard+=unnamedplus
 
 " Eclim completion
 let g:EclimCompletionMethod = 'omnifunc'
-
-" YouCompleteMe Python Path TODO: Remove
-"let g:ycm_server_python_interpreter = "/usr/bin/python"
 
 " Deoplete autocompletion
 " Start deoplete for autocompletion
