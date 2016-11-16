@@ -32,7 +32,7 @@ Bundle 'mkitt/tabline.vim.git'
 Bundle 'neomake/neomake'
 Bundle 'keith/swift.vim'
 Bundle 'peterhoeg/vim-qml'
-"Bundle 'kshenoy/vim-signature'
+Bundle 'kshenoy/vim-signature'
 "
 " The rest of your config follows here
 "
