@@ -186,3 +186,4 @@ let g:go_auto_sameids = 1
 autocmd FileType go nmap <Leader>g <Plug>(go-def-tab)
 autocmd FileType go nmap <leader>t <Plug>(go-test)
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
