@@ -1,3 +1,4 @@
+:imap <C-L> <Esc>
 set nocompatible
 filetype off
 "let mapleader = ","
@@ -38,6 +39,7 @@ Bundle 'fatih/molokai'
 Bundle 'garyburd/go-explorer'
 Bundle 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Bundle 'zchee/deoplete-go', {'build': 'make'}
+Bundle 'airblade/vim-gitgutter'
 "
 " The rest of your config follows here
 "
