@@ -3,7 +3,7 @@ set nocompatible
 filetype off
 "let mapleader = ","
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
 " let Vundle manage Vundle
@@ -23,7 +23,6 @@ Bundle 'klen/python-mode'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'moll/vim-node'
 Bundle 'marijnh/tern_for_vim'
-Bundle 'majutsushi/tagbar'
 Bundle 'NLKNguyen/copy-cut-paste.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'airblade/vim-rooter.git'
@@ -44,7 +43,6 @@ Bundle 'airblade/vim-gitgutter'
 " The rest of your config follows here
 "
 map <F2> :NERDTreeToggle<CR>
-map <F8> :TagbarToggle<CR>
 
 augroup vimrc_autocmds
     autocmd!
