@@ -3,7 +3,7 @@ set nocompatible
 filetype off
 "let mapleader = ","
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
 " let Vundle manage Vundle
@@ -23,7 +23,7 @@ Bundle 'klen/python-mode'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'moll/vim-node'
 Bundle 'marijnh/tern_for_vim'
-Bundle 'majutsushi/tagbar'
+"Bundle 'majutsushi/tagbar'
 Bundle 'NLKNguyen/copy-cut-paste.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'airblade/vim-rooter.git'
@@ -39,7 +39,7 @@ Bundle 'fatih/molokai'
 Bundle 'garyburd/go-explorer'
 Bundle 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Bundle 'zchee/deoplete-go', {'build': 'make'}
-Bundle 'airblade/vim-gitgutter'
+"Bundle 'airblade/vim-gitgutter'
 "
 " The rest of your config follows here
 "
@@ -189,3 +189,8 @@ autocmd FileType go nmap <Leader>g <Plug>(go-def-tab)
 autocmd FileType go nmap <leader>t <Plug>(go-test)
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
+
+" Add end braces
+inoremap {<cr> {<cr>}<c-o>O<tab>
+inoremap [<cr> [<cr>]<c-o>O<tab>
+inoremap (<cr> (<cr>)<c-o>O<tab>
