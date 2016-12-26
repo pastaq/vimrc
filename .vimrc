@@ -23,7 +23,6 @@ Bundle 'klen/python-mode'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'moll/vim-node'
 Bundle 'marijnh/tern_for_vim'
-"Bundle 'majutsushi/tagbar'
 Bundle 'NLKNguyen/copy-cut-paste.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'airblade/vim-rooter.git'
@@ -44,7 +43,6 @@ Bundle 'zchee/deoplete-go', {'build': 'make'}
 " The rest of your config follows here
 "
 map <F2> :NERDTreeToggle<CR>
-map <F8> :TagbarToggle<CR>
 
 augroup vimrc_autocmds
     autocmd!
@@ -189,8 +187,3 @@ autocmd FileType go nmap <Leader>g <Plug>(go-def-tab)
 autocmd FileType go nmap <leader>t <Plug>(go-test)
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
-
-" Add end braces
-inoremap {<cr> {<cr>}<c-o>O<tab>
-inoremap [<cr> [<cr>]<c-o>O<tab>
-inoremap (<cr> (<cr>)<c-o>O<tab>
